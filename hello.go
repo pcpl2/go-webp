@@ -10,8 +10,8 @@ package main
 import (
 	"bytes"
 	"fmt"
-	"io/ioutil"
 	"log"
+	"os"
 
 	"github.com/pcpl2/go-webp"
 )
@@ -23,7 +23,7 @@ func main() {
 	var err error
 
 	// Load file data
-	if data, err = ioutil.ReadFile("./testdata/1_webp_ll.webp"); err != nil {
+	if data, err = os.ReadFile("./testdata/1_webp_ll.webp"); err != nil {
 		log.Println(err)
 	}
 
@@ -50,7 +50,7 @@ func main() {
 	if err = webp.Encode(&buf, m, &webp.Options{Lossless: true}); err != nil {
 		log.Println(err)
 	}
-	if err = ioutil.WriteFile("output.webp", buf.Bytes(), 0666); err != nil {
+	if err = os.WriteFile("output.webp", buf.Bytes(), 0666); err != nil {
 		log.Println(err)
 	}
 

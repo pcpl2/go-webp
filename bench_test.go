@@ -6,12 +6,12 @@ package webp
 
 import (
 	"bytes"
-	"io/ioutil"
+	"os"
 	"testing"
 )
 
 func BenchmarkGetInfo(b *testing.B) {
-	data, err := ioutil.ReadFile("./testdata/1_webp_ll.webp")
+	data, err := os.ReadFile("./testdata/1_webp_ll.webp")
 	if err != nil {
 		b.Fatal(err)
 	}
@@ -23,7 +23,7 @@ func BenchmarkGetInfo(b *testing.B) {
 }
 
 func BenchmarkDecodeGray(b *testing.B) {
-	data, err := ioutil.ReadFile("./testdata/1_webp_ll.webp")
+	data, err := os.ReadFile("./testdata/1_webp_ll.webp")
 	if err != nil {
 		b.Fatal(err)
 	}
@@ -39,7 +39,7 @@ func BenchmarkDecodeGray(b *testing.B) {
 }
 
 func BenchmarkDecodeRGB(b *testing.B) {
-	data, err := ioutil.ReadFile("./testdata/1_webp_ll.webp")
+	data, err := os.ReadFile("./testdata/1_webp_ll.webp")
 	if err != nil {
 		b.Fatal(err)
 	}
@@ -55,7 +55,7 @@ func BenchmarkDecodeRGB(b *testing.B) {
 }
 
 func BenchmarkDecodeRGBA(b *testing.B) {
-	data, err := ioutil.ReadFile("./testdata/1_webp_ll.webp")
+	data, err := os.ReadFile("./testdata/1_webp_ll.webp")
 	if err != nil {
 		b.Fatal(err)
 	}
@@ -71,7 +71,7 @@ func BenchmarkDecodeRGBA(b *testing.B) {
 }
 
 func BenchmarkDecodeGrayToSize(b *testing.B) {
-	data, err := ioutil.ReadFile("./testdata/1_webp_ll.webp")
+	data, err := os.ReadFile("./testdata/1_webp_ll.webp")
 	if err != nil {
 		b.Fatal(err)
 	}
@@ -87,7 +87,7 @@ func BenchmarkDecodeGrayToSize(b *testing.B) {
 }
 
 func BenchmarkDecodeRGBToSize(b *testing.B) {
-	data, err := ioutil.ReadFile("./testdata/1_webp_ll.webp")
+	data, err := os.ReadFile("./testdata/1_webp_ll.webp")
 	if err != nil {
 		b.Fatal(err)
 	}
@@ -103,7 +103,7 @@ func BenchmarkDecodeRGBToSize(b *testing.B) {
 }
 
 func BenchmarkDecodeRGBAToSize(b *testing.B) {
-	data, err := ioutil.ReadFile("./testdata/1_webp_ll.webp")
+	data, err := os.ReadFile("./testdata/1_webp_ll.webp")
 	if err != nil {
 		b.Fatal(err)
 	}
