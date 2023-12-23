@@ -107,19 +107,3 @@ if err != nil {
 	log.Fatal(err)
 }
 ```
-
-Notes
-=====
-
-Change the libwebp to fast method:
-
-	internal/libwebp/src/enc/config.c
-	WebPConfigInitInternal
-	config->method = 0; // 4;
-
-BUGS
-====
-
-Report bugs to <chaishushan@gmail.com>.
-
-Thanks!
