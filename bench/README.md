@@ -85,5 +85,5 @@ BenchmarkDecode_yellow_rose_lossy_with_alpha_x_image_webp-4                    	
 BenchmarkDecode_yellow_rose_lossy_chai2010_webp-4                              	     500	   2212347 ns/op
 BenchmarkDecode_yellow_rose_lossy_chai2010_webp_cbuf-4                         	    1000	   2001677 ns/op
 BenchmarkDecode_yellow_rose_lossy_x_image_webp-4                               	     300	   5464172 ns/op
-ok  	github.com/chai2010/webp/bench	143.753s
+ok  	github.com/pcpl2/go-webp/bench	143.753s
 ```
