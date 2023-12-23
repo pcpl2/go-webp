@@ -16,8 +16,8 @@ webp
  ╚══╝╚══╝ ╚══════╝╚═════╝ ╚═╝
 ```
 
-[![Build Status](https://travis-ci.org/chai2010/webp.svg)](https://travis-ci.org/chai2010/webp)
-[![GoDoc](https://godoc.org/github.com/chai2010/webp?status.svg)](https://godoc.org/github.com/chai2010/webp)
+[![Run benchmark](https://github.com/pcpl2/go-webp/actions/workflows/run_benchmark.yml/badge.svg)](https://github.com/pcpl2/go-webp/actions/workflows/run_benchmark.yml)
+[![GoDoc](https://godoc.org/github.com/pcpl2/go-webp?status.svg)](https://godoc.org/github.com/pcpl2/go-webp)
 
 Benchmark
 =========
@@ -46,7 +46,7 @@ package main
 import (
 	"bytes"
 	"fmt"
-	"io/ioutil"
+	"os"
 	"log"
 
 	"github.com/chai2010/webp"
@@ -59,7 +59,7 @@ func main() {
 	var err error
 
 	// Load file data
-	if data, err = ioutil.ReadFile("./testdata/1_webp_ll.webp"); err != nil {
+	if data, err = os.ReadFile("./testdata/1_webp_ll.webp"); err != nil {
 		log.Println(err)
 	}
 
@@ -86,11 +86,11 @@ func main() {
 	if err = webp.Encode(&buf, m, &webp.Options{Lossless: true}); err != nil {
 		log.Println(err)
 	}
-	if err = ioutil.WriteFile("output.webp", buf.Bytes(), 0666); err != nil {
+	if err = os.WriteFile("output.webp", buf.Bytes(), 0666); err != nil {
 		log.Println(err)
 	}
-    
-    fmt.Println("Save output.webp ok")
+
+	fmt.Println("Save output.webp ok")
 }
 ```
 

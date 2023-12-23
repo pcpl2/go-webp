@@ -8,7 +8,7 @@
 package webp
 
 import (
-	"io/ioutil"
+	"os"
 	"testing"
 )
 
@@ -17,7 +17,7 @@ func TestWEBP_DECODER_ABI_VERSION(t *testing.T) {
 }
 
 func TestWebPGetInfo(t *testing.T) {
-	data, err := ioutil.ReadFile("./testdata/1_webp_ll.webp")
+	data, err := os.ReadFile("./testdata/1_webp_ll.webp")
 	tAssertNil(t, err)
 
 	w, h, ok := WebPGetInfo(data)

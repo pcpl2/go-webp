@@ -10,7 +10,7 @@ package webp_bench
 
 import (
 	"bytes"
-	"io/ioutil"
+	"os"
 	"testing"
 
 	chai2010_webp "github.com/pcpl2/go-webp"
@@ -18,7 +18,7 @@ import (
 )
 
 func tbLoadData(tb testing.TB, filename string) []byte {
-	data, err := ioutil.ReadFile("../testdata/" + filename)
+	data, err := os.ReadFile("../testdata/" + filename)
 	if err != nil {
 		tb.Fatal(err)
 	}

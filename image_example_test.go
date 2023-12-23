@@ -123,7 +123,7 @@ func ExampleImage_rgb() {
 			rgbSlice []RGB  = PixSlice(line).Slice(reflect.TypeOf([]RGB(nil))).([]RGB)
 		)
 
-		for i, _ := range rgbSlice {
+		for i := range rgbSlice {
 			rgbSlice[i] = RGB{
 				R: uint8(i + 1),
 				G: uint8(i + 2),
@@ -147,7 +147,7 @@ func ExampleImage_rgb48() {
 			rgbSlice []RGB  = PixSlice(line).Slice(reflect.TypeOf([]RGB(nil))).([]RGB)
 		)
 
-		for i, _ := range rgbSlice {
+		for i := range rgbSlice {
 			rgbSlice[i] = RGB{
 				R: uint16(i + 1),
 				G: uint16(i + 2),

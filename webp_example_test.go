@@ -6,12 +6,12 @@ package webp
 
 import (
 	"fmt"
-	"io/ioutil"
 	"log"
+	"os"
 )
 
 func xLoadData(filename string) []byte {
-	data, err := ioutil.ReadFile("./testdata/" + filename)
+	data, err := os.ReadFile("./testdata/" + filename)
 	if err != nil {
 		log.Fatal(err)
 	}

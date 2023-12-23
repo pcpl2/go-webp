@@ -12,7 +12,6 @@ import (
 	"image"
 	"image/color"
 	"io"
-	"io/ioutil"
 	"os"
 )
 
@@ -86,7 +85,7 @@ func DecodeConfig(r io.Reader) (config image.Config, err error) {
 
 // Decode reads a WEBP image from r and returns it as an image.Image.
 func Decode(r io.Reader) (m image.Image, err error) {
-	data, err := ioutil.ReadAll(r)
+	data, err := io.ReadAll(r)
 	if err != nil {
 		return
 	}

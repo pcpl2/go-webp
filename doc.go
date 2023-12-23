@@ -25,7 +25,7 @@ This is a simple example:
 	import (
 		"bytes"
 		"fmt"
-		"io/ioutil"
+		"os"
 		"log"
 
 		"github.com/pcpl2/go-webp"
@@ -38,7 +38,7 @@ This is a simple example:
 		var err error
 
 		// Load file data
-		if data, err = ioutil.ReadFile("./testdata/1_webp_ll.webp"); err != nil {
+		if data, err = os.ReadFile("./testdata/1_webp_ll.webp"); err != nil {
 			log.Fatal(err)
 		}
 
@@ -65,7 +65,7 @@ This is a simple example:
 		if err = webp.Encode(&buf, m, &webp.Options{Lossless: true}); err != nil {
 			log.Fatal(err)
 		}
-		if err = ioutil.WriteFile("output.webp", buf.Bytes(), 0666); err != nil {
+		if err = os.WriteFile("output.webp", buf.Bytes(), 0666); err != nil {
 			log.Fatal(err)
 		}
 		fmt.Printf("Save output.webp ok\n")
