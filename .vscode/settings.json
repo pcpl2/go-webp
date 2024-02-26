@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "webp.h": "c",
+        "utils.h": "c",
+        "mux.h": "c"
+    }
+}

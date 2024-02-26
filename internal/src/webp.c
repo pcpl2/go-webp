@@ -7,6 +7,7 @@
 #include "webp/decode.h"
 #include "webp/demux.h"
 #include "webp/mux.h"
+#include "utils/utils.h"
 
 #include <assert.h>
 #include <stdlib.h>
@@ -435,9 +436,9 @@ uint8_t* webpDelXMP(const uint8_t* data, size_t data_size, size_t* new_data_size
 }
 
 void* webpMalloc(size_t size) {
-	return malloc(size);
+	return WebPSafeMalloc(size, sizeof(uint8_t));
 }
 
 void webpFree(void* p) {
-	free(p);
+	WebPSafeFree(p);
 }
